@@ -1,20 +1,7 @@
-/* ==================================================================
-   CONFIGURACIÓN DE EMAILJS
-   ------------------------------------------------------------------
-   Credenciales conectadas al servicio de EmailJS del Diplomado/UPANA.
-   En el campo "To Email" de la plantilla de EmailJS deben estar
-   configurados: jibanez@upana.edu.gt, mperdomo@upana.edu.gt
-   (EmailJS no permite fijar destinatarios arbitrarios desde el
-   cliente por seguridad; también se envía como variable {{to_email}}
-   por si tu plantilla la utiliza).
-   ================================================================== */
 const EMAILJS_PUBLIC_KEY  = "l_osZXrcc4lbHocZC";
 const EMAILJS_SERVICE_ID  = "service_5srkeuq";
 const EMAILJS_TEMPLATE_ID = "template_3k3ekak";
 
-/* Destinatarios (referencia informativa — deben configurarse también
-   dentro de la plantilla de EmailJS, ver nota arriba). Se envían como
-   variable de plantilla {{to_email}} por si tu template la usa. */
 const CORREOS_DESTINO = "jibanez@upana.edu.gt, mperdomo@upana.edu.gt";
 
 document.addEventListener('DOMContentLoaded', () => {
