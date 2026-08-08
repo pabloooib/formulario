@@ -6,11 +6,11 @@
 <title>Inscripción Universitaria · UPANA</title>
 <meta name="description" content="Formulario de inscripción universitaria — completa tus datos personales, documentación e información académica.">
 
-<!-- Favicon oficial UPANA -->
+
 <link rel="icon" type="image/png" href="upana-favicon.png">
 <link rel="apple-touch-icon" href="upana-favicon.png">
 
-<!-- Tipografías: Fraunces (display, elegante y con carácter) + Manrope (texto/formulario, cálida y legible) -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,9 +19,7 @@
 </head>
 <body>
 
-<!-- ============================================================
-     FONDO DECORATIVO — trazos orgánicos tipo "hojas" en el viewport
-     ============================================================ -->
+
 <div class="bg-decor" aria-hidden="true">
   <svg class="bg-blob bg-blob--one" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M45.3,-58.5C58.6,-49.7,69.2,-35.6,73.6,-19.7C78,-3.8,76.2,13.9,68.6,28.6C61,43.3,47.6,55,32.1,62.6C16.6,70.2,-1,73.7,-18.4,70.6C-35.8,67.5,-53,57.8,-63.7,43.2C-74.4,28.6,-78.6,9.1,-75.4,-8.6C-72.2,-26.3,-61.6,-42.2,-47.6,-51.3C-33.6,-60.4,-16.8,-62.7,0.6,-63.5C18,-64.3,32,-67.3,45.3,-58.5Z" transform="translate(100 100)"/>
@@ -31,9 +29,7 @@
   </svg>
 </div>
 
-<!-- ============================================================
-     STEPPER LATERAL (desktop) — vástago de crecimiento con nodos-hoja
-     ============================================================ -->
+
 <nav class="stem-nav" aria-label="Progreso del formulario">
   <div class="stem-line" aria-hidden="true"><div class="stem-fill" id="stemFill"></div></div>
   <button type="button" class="stem-node" data-target="sec-personales" aria-label="Ir a Datos personales">
@@ -50,9 +46,6 @@
   </button>
 </nav>
 
-<!-- ============================================================
-     STEPPER MÓVIL — franja horizontal de progreso
-     ============================================================ -->
 <nav class="stem-nav-mobile" aria-label="Progreso del formulario (móvil)">
   <div class="stem-mobile-track"><div class="stem-mobile-fill" id="stemFillMobile"></div></div>
   <div class="stem-mobile-dots">
@@ -65,9 +58,7 @@
 
 <div class="page">
 
-  <!-- ============================================================
-       ENCABEZADO
-       ============================================================ -->
+
   <header class="hero">
     <span class="hero-kicker">Universidad Panamericana · UPANA</span>
     <h1 class="hero-title">Empieza tu <span>proceso de inscripción</span></h1>
@@ -76,9 +67,7 @@
 
   <form id="formInscripcion" class="form-shell" novalidate>
 
-    <!-- ============================================================
-         SECCIÓN 1 — DATOS PERSONALES
-         ============================================================ -->
+
     <section class="card" id="sec-personales">
       <div class="card-head">
         <span class="card-index">01</span>
@@ -138,9 +127,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECCIÓN 2 — DOCUMENTACIÓN E IDENTIFICACIÓN
-         ============================================================ -->
+
     <section class="card" id="sec-documento">
       <div class="card-head">
         <span class="card-index">02</span>
@@ -190,9 +177,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECCIÓN 3 — INFORMACIÓN ACADÉMICA Y LABORAL
-         ============================================================ -->
+
     <section class="card" id="sec-academico">
       <div class="card-head">
         <span class="card-index">03</span>
@@ -220,9 +205,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECCIÓN 4 — SELECCIÓN DE CARRERA
-         ============================================================ -->
+
     <section class="card card-carrera" id="sec-carrera">
       <div class="card-head">
         <span class="card-index">04</span>
@@ -308,9 +291,7 @@
   </footer>
 </div>
 
-<!-- ============================================================
-     MODAL DE CONFIRMACIÓN
-     ============================================================ -->
+
 <div class="modal-overlay" id="successOverlay">
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
     <div class="modal-icon">
@@ -333,7 +314,6 @@
   </div>
 </div>
 
-<!-- SDK de EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
