@@ -1,23 +1,9 @@
-/* ==================================================================
-   CONFIGURACIÓN DE EMAILJS
-   ------------------------------------------------------------------
-   1. Crea una cuenta gratuita en https://www.emailjs.com/
-   2. Crea un "Email Service" (por ejemplo, conectado a Gmail/Outlook).
-   3. Crea un "Email Template" con variables {{...}} que coincidan con
-      los "name" de los campos del formulario (ver más abajo).
-   4. En el campo "To Email" de la plantilla, coloca:
-        jibanez@upana.edu.gt, mperdomo@upana.edu.gt
-      (EmailJS no permite fijar destinatarios arbitrarios desde el
-      cliente por seguridad — deben configurarse en la plantilla).
-   5. Reemplaza los 3 valores de abajo con los tuyos.
-   ================================================================== */
-const EMAILJS_PUBLIC_KEY  = "TU_PUBLIC_KEY_AQUI";
-const EMAILJS_SERVICE_ID  = "TU_SERVICE_ID_AQUI";
-const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID_AQUI";
 
-/* Destinatarios (referencia informativa — deben configurarse también
-   dentro de la plantilla de EmailJS, ver nota arriba). Se envían como
-   variable de plantilla {{to_email}} por si tu template la usa. */
+const EMAILJS_PUBLIC_KEY  = "l_osZXrcc4lbHocZC";
+const EMAILJS_SERVICE_ID  = "service_5srkeuq";
+const EMAILJS_TEMPLATE_ID = "template_3k3ekak";
+
+
 const CORREOS_DESTINO = "jibanez@upana.edu.gt, mperdomo@upana.edu.gt";
 
 document.addEventListener('DOMContentLoaded', () => {
