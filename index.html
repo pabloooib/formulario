@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscripción Universitaria · UPANA</title>
+<meta name="description" content="Formulario de inscripción universitaria — completa tus datos personales, documentación e información académica.">
 
+<!-- Coloca aquí la ruta de tu ícono cuando la tengas lista -->
+<link rel="icon" type="image/png" href="RUTA_DEL_FAVICON_AQUI.png">
+
+<!-- Tipografías: Fraunces (display, con carácter orgánico) + Plus Jakarta Sans (texto/formulario) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     FONDO DECORATIVO — trazos orgánicos tipo "hojas" en el viewport
+     ============================================================ -->
+<div class="bg-decor" aria-hidden="true">
+  <svg class="bg-blob bg-blob--one" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M45.3,-58.5C58.6,-49.7,69.2,-35.6,73.6,-19.7C78,-3.8,76.2,13.9,68.6,28.6C61,43.3,47.6,55,32.1,62.6C16.6,70.2,-1,73.7,-18.4,70.6C-35.8,67.5,-53,57.8,-63.7,43.2C-74.4,28.6,-78.6,9.1,-75.4,-8.6C-72.2,-26.3,-61.6,-42.2,-47.6,-51.3C-33.6,-60.4,-16.8,-62.7,0.6,-63.5C18,-64.3,32,-67.3,45.3,-58.5Z" transform="translate(100 100)"/>
+  </svg>
+  <svg class="bg-blob bg-blob--two" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M39.9,-51.8C52.5,-43.7,63.6,-32.1,68.6,-18C73.6,-3.9,72.5,12.7,65.4,26.5C58.3,40.3,45.2,51.3,30.6,58.5C16,65.7,-0.1,69.1,-16.4,66.6C-32.7,64.1,-49.2,55.7,-59.9,42.3C-70.6,28.9,-75.5,10.5,-73.2,-6.7C-70.9,-23.9,-61.4,-39.9,-48.1,-48.1C-34.8,-56.3,-17.4,-56.7,-1.4,-54.9C14.6,-53.1,27.3,-59.9,39.9,-51.8Z" transform="translate(100 100)"/>
+  </svg>
+</div>
+
+<!-- ============================================================
+     STEPPER LATERAL (desktop) — vástago de crecimiento con nodos-hoja
+     ============================================================ -->
+<nav class="stem-nav" aria-label="Progreso del formulario">
+  <div class="stem-line" aria-hidden="true"><div class="stem-fill" id="stemFill"></div></div>
+  <button type="button" class="stem-node" data-target="sec-personales" aria-label="Ir a Datos personales">
+    <span class="stem-leaf">1</span><span class="stem-label">Datos personales</span>
+  </button>
+  <button type="button" class="stem-node" data-target="sec-documento" aria-label="Ir a Documentación">
+    <span class="stem-leaf">2</span><span class="stem-label">Documentación</span>
+  </button>
+  <button type="button" class="stem-node" data-target="sec-academico" aria-label="Ir a Información académica">
+    <span class="stem-leaf">3</span><span class="stem-label">Académico y laboral</span>
+  </button>
+  <button type="button" class="stem-node" data-target="sec-carrera" aria-label="Ir a Selección de carrera">
+    <span class="stem-leaf">4</span><span class="stem-label">Tu carrera</span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     STEPPER MÓVIL — franja horizontal de progreso
+     ============================================================ -->
+<nav class="stem-nav-mobile" aria-label="Progreso del formulario (móvil)">
+  <div class="stem-mobile-track"><div class="stem-mobile-fill" id="stemFillMobile"></div></div>
+  <div class="stem-mobile-dots">
+    <span class="dot" data-target="sec-personales"></span>
+    <span class="dot" data-target="sec-documento"></span>
+    <span class="dot" data-target="sec-academico"></span>
+    <span class="dot" data-target="sec-carrera"></span>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ============================================================
+       ENCABEZADO
+       ============================================================ -->
+  <header class="hero">
+    <p class="hero-eyebrow">Universidad Panamericana · UPANA</p>
+    <h1 class="hero-title">Empieza tu <span>proceso de inscripción</span></h1>
+    <p class="hero-sub">Completa el formulario con tus datos. Un asesor académico revisará tu solicitud y se pondrá en contacto contigo en las próximas 24 horas hábiles.</p>
+  </header>
+
+  <form id="formInscripcion" class="form-shell" novalidate>
+
+    <!-- ============================================================
+         SECCIÓN 1 — DATOS PERSONALES
+         ============================================================ -->
+    <section class="card" id="sec-personales">
+      <div class="card-head">
+        <span class="card-index">01</span>
+        <div>
+          <h2>Datos personales</h2>
+          <p>Información básica de identificación y contacto.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="nombreCompleto">Nombre completo</label>
+          <input type="text" id="nombreCompleto" name="nombre_completo" placeholder="Ej. María Fernanda López García" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="telefono">Número de teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5555-5555" pattern="[0-9\-\+\s]{8,15}" required autocomplete="tel">
+        </div>
+
+        <div class="field field-span-2">
+          <label for="direccion">Dirección completa de residencia</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Zona, calle, colonia, municipio…" required autocomplete="street-address">
+        </div>
+
+        <div class="field">
+          <label for="departamento">Departamento de residencia</label>
+          <select id="departamento" name="departamento" required>
+            <option value="" disabled selected>Selecciona un departamento</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fechaNacimiento">Fecha de nacimiento</label>
+          <input type="date" id="fechaNacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="field">
+          <label for="nacionalidad">Nacionalidad</label>
+          <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Ej. Guatemalteca" required>
+        </div>
+
+        <div class="field">
+          <label for="estadoCivil">Estado civil</label>
+          <select id="estadoCivil" name="estado_civil" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Soltero/a">Soltero/a</option>
+            <option value="Casado/a">Casado/a</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field field-span-2">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo_electronico" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 2 — DOCUMENTACIÓN E IDENTIFICACIÓN
+         ============================================================ -->
+    <section class="card" id="sec-documento">
+      <div class="card-head">
+        <span class="card-index">02</span>
+        <div>
+          <h2>Documentación e identificación</h2>
+          <p>Necesitamos verificar tu identidad para continuar con el proceso.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="tipoDocumento">Tipo de documento de identificación</label>
+          <select id="tipoDocumento" name="tipo_documento" required>
+            <option value="" disabled selected>Selecciona un tipo</option>
+            <option value="DPI">DPI</option>
+            <option value="CUI">CUI</option>
+            <option value="Pasaporte">Pasaporte</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="numeroDocumento">Número de documento</label>
+          <input type="text" id="numeroDocumento" name="numero_documento" placeholder="Ej. 1234 56789 0101" required inputmode="numeric">
+        </div>
+
+        <div class="field field-span-2">
+          <label>Fotografía o copia legible de tu DPI/CUI</label>
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-describedby="dropzoneHint">
+            <input type="file" id="archivoDocumento" name="archivo_documento" accept="image/*,.pdf" hidden>
+            <div class="dropzone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4m0 0 4 4m-4-4L8 8"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            </div>
+            <p class="dropzone-title" id="dropzoneTitle">Arrastra tu archivo aquí o <span>elige un archivo</span></p>
+            <p class="dropzone-hint" id="dropzoneHint">JPG, PNG o PDF · máximo 5&nbsp;MB</p>
+          </div>
+          <div class="file-preview hidden" id="filePreview">
+            <div class="file-preview-icon" id="filePreviewIcon"></div>
+            <div class="file-preview-info">
+              <span class="file-preview-name" id="filePreviewName"></span>
+              <span class="file-preview-size" id="filePreviewSize"></span>
+            </div>
+            <button type="button" class="file-preview-remove" id="filePreviewRemove" aria-label="Quitar archivo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 3 — INFORMACIÓN ACADÉMICA Y LABORAL
+         ============================================================ -->
+    <section class="card" id="sec-academico">
+      <div class="card-head">
+        <span class="card-index">03</span>
+        <div>
+          <h2>Información académica y laboral</h2>
+          <p>Cuéntanos sobre tu formación previa y tu situación laboral actual.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="field field-span-2">
+          <label for="institucionProcedencia">Colegio o institución de procedencia</label>
+          <input type="text" id="institucionProcedencia" name="institucion_procedencia" placeholder="Ej. Colegio San Rafael" required>
+        </div>
+
+        <div class="field">
+          <label for="promedioAcademico">Promedio académico</label>
+          <input type="number" id="promedioAcademico" name="promedio_academico" placeholder="Ej. 85" min="0" max="100" step="0.01" required>
+        </div>
+
+        <div class="field">
+          <label for="lugarTrabajo">Lugar de trabajo <span class="optional-tag">Opcional</span></label>
+          <input type="text" id="lugarTrabajo" name="lugar_trabajo" placeholder="Ej. Empresa S.A. — si aplica">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 4 — SELECCIÓN DE CARRERA
+         ============================================================ -->
+    <section class="card card-carrera" id="sec-carrera">
+      <div class="card-head">
+        <span class="card-index">04</span>
+        <div>
+          <h2>Selección de carrera</h2>
+          <p>Elige el programa que quieres estudiar. ¿No estás seguro? Revisa toda la oferta académica.</p>
+        </div>
+      </div>
+
+      <a class="oferta-btn" href="https://upanavirtual.edu.gt/carreras/" target="_blank" rel="noopener noreferrer">
+        <span class="oferta-btn-text">
+          <strong>Consultar oferta académica</strong>
+          <small>Explora todos los programas disponibles en upanavirtual.edu.gt</small>
+        </span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+
+      <div class="field" style="margin-top:22px;">
+        <label for="carreraInteres">Carrera de interés</label>
+        <select id="carreraInteres" name="carrera_interes" required>
+          <option value="" disabled selected>Selecciona un programa</option>
+
+          <optgroup label="Diplomados">
+            <option value="DEMN">DEMN — Diplomado en Estrategia de marketing para negocios de ventas minoristas</option>
+            <option value="DGPD">DGPD — Diplomado en Gestión de procesos digitales para empresa</option>
+            <option value="DRCM">DRCM — Diplomado en Retail category management aplicado a negocios</option>
+            <option value="DPBI">DPBI — Diplomado en Power BI aplicado a empresas</option>
+            <option value="DCFN">DCFN — Diplomado en Contabilidad y finanzas para no financieros</option>
+            <option value="DIEH">DIEH — Diplomado en Estrategias y herramientas digitales para la Gestión del Talento Humano</option>
+            <option value="DNE">DNE — Diplomado en Neuroeducación</option>
+            <option value="DPVD">DPVD — Diplomado en Principios y Valores Deportivos</option>
+          </optgroup>
+
+          <optgroup label="Profesorado">
+            <option value="PPT2">PPT2 — Profesorado de Segunda Enseñanza en Pedagogía y Tecnologías del Aprendizaje (2 años)</option>
+          </optgroup>
+
+          <optgroup label="Licenciatura">
+            <option value="LAE">LAE — Licenciatura en Administración de Empresas</option>
+            <option value="LALE">LALE — Licenciatura en Administración y Liderazgo Educativo</option>
+            <option value="LPOV">LPOV — Licenciatura en Pedagogía y Orientación Vocacional</option>
+            <option value="LMK">LMK — Licenciatura en Marketing</option>
+            <option value="LEAP">LEAP — Licenciatura en Educación y Acompañamiento Pedagógico</option>
+            <option value="LT">LT — Licenciatura en Teología</option>
+            <option value="LTMP">LTMP — Licenciatura en Teología (Movilidad Estudiantil)</option>
+          </optgroup>
+
+          <optgroup label="Postgrado">
+            <option value="PEGC">PEGC — Postgrado de Especialización en Gestión de Cadena de Valor en Retail</option>
+          </optgroup>
+
+          <optgroup label="Maestría">
+            <option value="MGE">MGE — Maestría en Gerencia Educativa*</option>
+            <option value="MIDS">MIDS — Maestría en Innovación y Desarrollo Social*</option>
+            <option value="MGTH">MGTH — Maestría en Gestión del Talento Humano*</option>
+            <option value="MAIC">MAIC — Maestría en Administración, Innovación y Cambio*</option>
+            <option value="MCAD">MCAD — Maestría en Ciencias de la Administración*</option>
+            <option value="MEEV">MEEV — Maestría en Evaluación Educativa*</option>
+            <option value="MIP">MIP — Maestría en Innovación Pedagógica*</option>
+            <option value="MLGO">MLGO — Maestría en Liderazgo y Gestión Organizacional*</option>
+            <option value="MNA">MNA — Maestría en Negocios y Administración*</option>
+            <option value="MPN">MPN — Maestría en Psicopedagogía*</option>
+            <option value="MSAT">MSAT — Maestría en Salud y Ambiente de Trabajo*</option>
+            <option value="MAPI">MAPI — Maestría en Administración de Proyectos e Innovación*</option>
+          </optgroup>
+        </select>
+        <p class="field-note">* Los nombres completos de los programas de Maestría son referenciales — confírmalos con Vicerrectoría Académica y actualiza el texto de las opciones en <code>index.html</code> antes de publicar.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENVÍO
+         ============================================================ -->
+    <div class="submit-row">
+      <p class="submit-hint">Al enviar, aceptas que UPANA se comunique contigo para continuar tu proceso de inscripción.</p>
+      <button type="submit" class="btn-submit" id="btnSubmit">
+        <span class="btn-submit-text">Enviar inscripción</span>
+        <span class="btn-submit-spinner" aria-hidden="true"></span>
+      </button>
+    </div>
+
+  </form>
+
+  <footer class="page-footer">
+    <p>© <span id="anioActual"></span> Universidad Panamericana de Guatemala — Formulario de inscripción</p>
+  </footer>
+</div>
+
+<!-- ============================================================
+     MODAL DE CONFIRMACIÓN
+     ============================================================ -->
+<div class="modal-overlay" id="successOverlay">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+    </div>
+    <h3 id="successTitle">¡Inscripción enviada!</h3>
+    <p>Hemos recibido tu información correctamente. Un asesor académico de UPANA se pondrá en contacto contigo muy pronto.</p>
+    <button type="button" class="btn-modal-close" id="btnCloseModal">Entendido</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="errorOverlay">
+  <div class="modal-card modal-card--error" role="dialog" aria-modal="true" aria-labelledby="errorTitle">
+    <div class="modal-icon modal-icon--error">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+    </div>
+    <h3 id="errorTitle">No se pudo enviar</h3>
+    <p id="errorMessage">Ocurrió un problema al enviar tu inscripción. Intenta nuevamente en unos momentos.</p>
+    <button type="button" class="btn-modal-close btn-modal-close--error" id="btnCloseErrorModal">Cerrar</button>
+  </div>
+</div>
+
+<!-- SDK de EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
