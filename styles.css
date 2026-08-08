@@ -1,11 +1,4 @@
-/* ==================================================================
-   TOKENS
-   Dirección visual: elegancia cálida tipo boutique — inspirada en la
-   paleta crema/cacao y las microinteracciones suaves de un sitio de
-   chocolatería de alta gama (simplychocolate.dk). Fondo marfil cálido,
-   tinta café oscuro, acentos en caramelo y terracota, tipografía
-   serif con carácter (Fraunces) + sans cálida y legible (Manrope).
-   ================================================================== */
+
 :root{
   --cream:        #FBF8F2;   /* fondo de página */
   --cream-deep:   #F3EDE1;   /* fondo secundario / franjas */
@@ -75,9 +68,7 @@ a{ color: inherit; }
   100%{ transform: translate(-2%, 3%) rotate(6deg) scale(1.04); }
 }
 
-/* ==================================================================
-   LAYOUT GENERAL
-   ================================================================== */
+
 .page{
   max-width: 880px;
   margin: 0 auto;
